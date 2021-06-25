@@ -24,7 +24,7 @@ public abstract class CalibrationResult {
     private static final int DISTORTION_COEFFICIENTS_SIZE = 5;
 
     public static void save(Activity activity, Mat cameraMatrix, Mat distortionCoefficients) {
-        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_WORLD_READABLE);
+        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
         double[] cameraMatrixArray = new double[CAMERA_MATRIX_ROWS * CAMERA_MATRIX_COLS];

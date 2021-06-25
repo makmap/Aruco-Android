@@ -19,7 +19,7 @@ public class CameraParameters {
 	public static boolean tryLoad(Activity activity, Mat cameraMatrix, Mat distCoeffs){
 		try {
 			Context context = activity.createPackageContext(CAMERA_CALIBRATION_PKG, Context.CONTEXT_IGNORE_SECURITY);
-			SharedPreferences cameraPrefs = context.getSharedPreferences(CAMERA_CALIBRATION_PREFS, Context.MODE_WORLD_READABLE);
+			SharedPreferences cameraPrefs = context.getSharedPreferences(CAMERA_CALIBRATION_PREFS, Context.MODE_PRIVATE);
 			
 			if(cameraPrefs.getFloat("0", -1) == -1)
 				return false;
